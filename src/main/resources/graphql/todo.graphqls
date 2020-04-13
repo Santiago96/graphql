@@ -1,0 +1,23 @@
+scalar MyDate
+input ToDoInput {
+    owner: String!,
+    description: String!,
+    isEnabled: Boolean!
+}
+
+type ToDo {
+    id: ID!,
+    owner: String!,
+    description: String!,
+    startDate: MyDate!,
+    isEnabled: Boolean!
+}
+
+type Query {
+    owner(owner: String): [ToDo]!
+}
+
+type Mutation {
+    addToDo(owner: String, description: String, isEnabled: Boolean): ToDo!
+}
+
